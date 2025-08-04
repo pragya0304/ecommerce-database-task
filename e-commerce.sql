@@ -19,9 +19,9 @@ create table categories(
 );
 
 insert into categories(CategoryID,CategoryName)values(1,'Electronics'),
-(2,'Clothing'),
-(3,'Books'),
-(4,'Home Appliances');
+(2, 'Clothing'),
+(3, 'Books'),
+(4,' Home Appliances');
 
 create table Products(
 ProductID int primary key auto_increment,
@@ -33,10 +33,10 @@ CategoryID int,
 foreign key(CategoryId) references categories(CategoryID)
 );
 
-insert into Products(ProductID,ProductName,Description,price,Stock,CategoryId)values(1,'iPhone 15', 'Apple smartphone', 79999.00, 10, 1),
-(2,'T-Shirt', 'Cotton round neck t-shirt', 499.00, 50, 2),
-(3,'Book - Atomic Habits', 'Self-help book', 350.00, 30, 3),
-(4,'Microwave Oven', '800W Microwave', 6500.00, 8, 4);
+insert into Products(ProductID, ProductName, Description, price, Stock, CategoryId)values(1,'iPhone 15', 'Apple smartphone', 79999.00, 10, 1),
+(2, 'T-Shirt', 'Cotton round neck t-shirt', 499.00, 50, 2),
+(3,' Book - Atomic Habits', 'Self-help book', 350.00, 30, 3),
+(4, 'Microwave Oven', '800W Microwave', 6500.00, 8, 4);
 
 create table Orders(
 OrderID int primary key auto_increment,
@@ -47,6 +47,7 @@ foreign key(Customer_ID) references customers(Customer_ID)
 );
 insert into Orders(Customer_ID,OrderDate,Status)values(1, '2025-08-01 10:30:00', 'Shipped'),
 (2, '2025-08-02 11:00:00', 'Processing');
+
  create table OrderDetails(
  OrderdetailID int primary key auto_increment,
  OrderID int,
@@ -59,10 +60,7 @@ insert into Orders(Customer_ID,OrderDate,Status)values(1, '2025-08-01 10:30:00',
  insert into OrderDetails(OrderID,ProductID,Quantity,PriceATPurchase) values (1,1, 1, 79999.00),
 (1, 2, 2, 499.00),
 (2, 3, 1, 350.00);
- 
- 
- 
- 
+
  create table Payments(
  PaymentID int primary key auto_increment,
  OrderID int,
